@@ -3,6 +3,7 @@ import { Inter, Poppins, Mukta } from "next/font/google"
 import "./globals.css"
 import { Providers } from "@/components/providers"
 import { Toaster } from "@/components/ui/toaster"
+import { Chatbot } from "@/components/Chatbot"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -22,6 +23,7 @@ export default function RootLayout({
         <Providers>
           {children}
           <Toaster />
+          <Chatbot />
         </Providers>
       </body>
     </html>
