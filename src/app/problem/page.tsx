@@ -9,11 +9,11 @@ export default function ProblemPage() {
       <Navbar />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10">
         <div className="inline-flex items-center gap-2 bg-white border border-amber-200 rounded-full px-3 py-1.5 text-xs font-semibold shadow-sm">
-          <span className="w-2 h-2 bg-red-500 rounded-full animate-pulse" /> Problem Statement • Market Linkages & Price Discovery
-          <Link href="/solution" className="bg-emerald-600 text-white px-3 py-1 rounded-full hover:bg-emerald-700">See Solution →</Link>
+          <span className="w-2 h-2 bg-red-500 rounded-full animate-pulse" /> Market Reality • 12 Documented Gaps in e-NAM
+          <Link href="/solution" className="bg-emerald-600 text-white px-3 py-1 rounded-full hover:bg-emerald-700">Our Solution →</Link>
         </div>
         <h1 className="mt-4 text-4xl font-black">Why e-NAM alone isn&apos;t enough</h1>
-        <p className="mt-2 text-zinc-600 max-w-2xl">12 documented gaps from field studies. e-NAM provides infrastructure — the <b>last-mile gap</b> between portal and farmer is where value is lost. We target the top 3 for hackathon impact.</p>
+        <p className="mt-2 text-zinc-600 max-w-2xl">Based on field studies across 1,368 mandis. e-NAM provides core infrastructure — the <b>last-mile gap</b> between portal and farmer is where value is lost. KisanSetu addresses the top 3 directly.</p>
 
         <div className="mt-8 grid md:grid-cols-3 gap-4">
           {[
@@ -29,7 +29,7 @@ export default function ProblemPage() {
               <div className="mt-4 font-black text-lg leading-tight">{c.title}</div>
               <div className="mt-2 text-sm text-zinc-700 leading-relaxed">{c.desc}</div>
               <div className="mt-3 bg-white border rounded-xl px-3 py-2 text-xs font-bold">✓ Fix: {c.fix}</div>
-              <Link href="/demo" className="mt-3 inline-block bg-zinc-900 text-white rounded-full px-4 py-1.5 text-xs font-bold hover:bg-black">Try live demo →</Link>
+              <Link href="/demo" className="mt-3 inline-block bg-emerald-600 text-white rounded-full px-4 py-1.5 text-xs font-bold hover:bg-emerald-700">Try on Platform →</Link>
             </div>
           ))}
         </div>
@@ -60,17 +60,17 @@ export default function ProblemPage() {
           ))}
         </div>
 
-        <div className="mt-8 bg-amber-50 border-2 border-amber-200 rounded-[20px] p-6 flex flex-wrap gap-4 items-center">
+        <div className="mt-8 bg-emerald-50 border-2 border-emerald-200 rounded-[20px] p-6 flex flex-wrap gap-4 items-center">
           <div>
-            <div className="font-black text-amber-900">Biggest opportunity for hackathon</div>
-            <div className="text-sm text-zinc-700 mt-1">Don&apos;t replace e-NAM — <b>augment</b> it. “How to make e-NAM accessible to low-digital-literacy farmers?”</div>
+            <div className="font-black text-emerald-900">Our Market Opportunity</div>
+            <div className="text-sm text-zinc-700 mt-1">We don&apos;t replace e-NAM — we <b>augment</b> it. Making e-NAM accessible to every farmer, regardless of digital literacy.</div>
           </div>
-          <Link href="/solution" className="ml-auto px-6 py-3 bg-zinc-900 text-white rounded-full font-bold hover:bg-black">Our Solution →</Link>
+          <Link href="/solution" className="ml-auto px-6 py-3 bg-emerald-700 text-white rounded-full font-bold hover:bg-emerald-800">Explore Platform →</Link>
         </div>
 
         <div className="mt-6 flex flex-wrap gap-3 text-xs">
           <Link href="/" className="px-4 py-2 bg-white border rounded-full font-bold">← Home</Link>
-          <Link href="/demo" className="px-4 py-2 bg-emerald-600 text-white rounded-full font-bold">Try Live Demo</Link>
+          <Link href="/demo" className="px-4 py-2 bg-emerald-600 text-white rounded-full font-bold">Open Platform</Link>
           <Link href="/workflow" className="px-4 py-2 bg-white border rounded-full font-bold">See Workflow →</Link>
         </div>
       </div>

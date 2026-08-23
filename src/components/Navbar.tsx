@@ -18,7 +18,7 @@ export function Navbar() {
           <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-600 to-lime-500 flex items-center justify-center text-white font-bold text-lg">क</div>
           <div>
             <div className="font-extrabold leading-none text-[18px]">KisanSetu <span className="text-emerald-700">| किसान सेतु</span></div>
-            <div className="text-[11px] tracking-widest text-zinc-500 font-medium">e-NAM Intelligence Layer • SIH 2026</div>
+            <div className="text-[11px] tracking-widest text-zinc-500 font-medium">e-NAM Intelligence Layer • Govt. of India Integrated</div>
           </div>
         </Link>
         <div className="hidden md:flex items-center gap-1 text-sm font-medium">

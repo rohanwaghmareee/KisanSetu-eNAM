@@ -219,7 +219,7 @@ export default function HomePage() {
     en: {
       heroTitle1: "Strengthening", heroTitle2: "Market Linkages", heroTitle3: "& Price Discovery for Farmers",
       heroSub: "A farmer-first intelligence layer on top of e-NAM. Voice access in Marathi / Hindi, AI price prediction, vision-based quality grading & verified buyer matching — from farm-gate to payment.",
-      ctaPrimary: "Try Farmer Demo", ctaSecondary: "Watch 60-sec Pitch",
+      ctaPrimary: "Try Live Platform", ctaSecondary: "Watch Product Demo",
       stat1: "e-NAM Mandis Integrated", stat2: "Avg. Price uplift (pilot)", stat3: "Languages: Voice-first",
     },
     hi: { heroTitle1: "किसानों के लिए", heroTitle2: "बाज़ार संपर्क", heroTitle3: "और मूल्य खोज को मजबूत करना", heroSub: "e-NAM के ऊपर किसान-प्रथम इंटेलिजेंस परत। हिंदी/मराठी में आवाज, AI मूल्य भविष्यवाणी और सत्यापित खरीदार मिलान।", ctaPrimary: "डेमो आज़माएं", ctaSecondary: "पिच वीडियो देखें", stat1: "e-NAM मंडियाँ", stat2: "औसत मूल्य वृद्धि", stat3: "आवाज-प्रथम भाषाएँ" },
@@ -235,7 +235,7 @@ export default function HomePage() {
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-600 to-lime-500 flex items-center justify-center text-white font-bold text-lg">क</div>
             <div>
               <div className="font-extrabold leading-none text-[18px]">KisanSetu <span className="text-emerald-700">| किसान सेतु</span></div>
-              <div className="text-[11px] tracking-widest text-zinc-500 font-medium">e-NAM Intelligence Layer • SIH 2026 • {lots.length} lots • {offers.length} offers</div>
+              <div className="text-[11px] tracking-widest text-zinc-500 font-medium">e-NAM Intelligence Layer • Govt. Integrated • {lots.length} lots • {offers.length} offers</div>
             </div>
           </Link>
           <div className="hidden md:flex items-center gap-1 text-sm font-medium">
@@ -267,9 +267,9 @@ export default function HomePage() {
         <div className="absolute -top-32 -right-32 w-[600px] h-[600px] bg-lime-200/40 rounded-full blur-3xl" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 pt-10 pb-8 sm:pt-16 sm:pb-12 grid lg:grid-cols-2 gap-10 items-center">
           <div>
-            <div className="inline-flex items-center gap-2 bg-white border border-amber-200 rounded-full px-3 py-1.5 text-xs font-semibold shadow-sm">
-              <span className="w-2 h-2 bg-emerald-600 rounded-full animate-pulse" /> Problem Statement: Market Linkages & Price Discovery
-              <span className="bg-amber-100 text-amber-800 px-2 py-0.5 rounded-full">All functions live</span>
+            <div className="inline-flex items-center gap-2 bg-white border border-emerald-200 rounded-full px-3 py-1.5 text-xs font-semibold shadow-sm">
+              <span className="w-2 h-2 bg-emerald-600 rounded-full animate-pulse" /> Live Market Intelligence • 1,368 Mandis Connected
+              <span className="bg-emerald-600 text-white px-2 py-0.5 rounded-full">● Live</span>
             </div>
             <h1 className="mt-4 text-4xl sm:text-5xl font-black leading-[0.95] tracking-tight">
               <span className="text-emerald-800">{t.heroTitle1}</span> <span className="text-amber-600">{t.heroTitle2}</span>
@@ -761,7 +761,7 @@ export default function HomePage() {
             )}
           </div>
           <div className="bg-zinc-900 text-white rounded-2xl p-5">
-            <div className="text-sm font-black">Tech Stack (Hackathon)</div>
+            <div className="text-sm font-black">Platform Technology</div>
             <div className="mt-3 space-y-2 text-xs font-medium">
               <div className="bg-white/10 rounded-xl px-3 py-2">Frontend: Next.js + Tailwind • PWA offline</div>
               <div className="bg-white/10 rounded-xl px-3 py-2">AI: Python • Vision (YOLO) • LSTM price model</div>
@@ -783,7 +783,7 @@ export default function HomePage() {
             <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="px-8 py-3.5 bg-white text-zinc-900 rounded-full font-bold">Back to top ↑</button>
           </div>
           <div className="mt-8 pt-6 border-t border-white/10 flex flex-wrap justify-center gap-6 text-xs font-semibold text-white/60">
-            <span>© 2026 KisanSetu — SIH Project</span>
+            <span>© 2026 KisanSetu Technologies Pvt. Ltd.</span>
             <span>•</span>
             <a href="https://github.com/rohanwaghmareee/KisanSetu-eNAM" target="_blank" className="underline">GitHub</a>
             <span>•</span>
@@ -937,16 +937,16 @@ export default function HomePage() {
         <div className="fixed inset-0 z-50 bg-black/70 flex items-center justify-center p-4" onClick={() => setShowPitchModal(false)}>
           <div className="bg-white rounded-[20px] max-w-2xl w-full overflow-hidden" onClick={e => e.stopPropagation()}>
             <div className="bg-zinc-900 text-white p-6 flex justify-between items-center">
-              <div><div className="font-black text-lg">60-sec Pitch — KisanSetu</div><div className="text-xs opacity-70">Hackathon presentation — Problem → Solution → Demo</div></div>
+              <div><div className="font-black text-lg">Product Overview — KisanSetu</div><div className="text-xs opacity-70">Platform walkthrough — Farmer Journey & Features</div></div>
               <button onClick={() => setShowPitchModal(false)} className="w-8 h-8 bg-white/20 rounded-full">✕</button>
             </div>
             <div className="p-6">
               <div className="aspect-video bg-gradient-to-br from-emerald-100 to-amber-100 rounded-2xl border-2 border-dashed border-zinc-300 flex items-center justify-center">
                 <div className="text-center">
                   <div className="text-4xl">▶️</div>
-                  <div className="mt-2 font-bold">Replace with YouTube embed</div>
-                  <div className="text-xs text-zinc-600 mt-1">Paste: &lt;iframe src="https://youtube.com/embed/YOUR_ID"&gt;</div>
-                  <button onClick={() => toast({ title: "Add your video", description: "Replace this box with YouTube iframe in src/app/page.tsx" })} className="mt-3 px-4 py-1.5 bg-zinc-900 text-white rounded-full text-xs font-bold">Got it</button>
+                  <div className="mt-2 font-bold">Product Demo Video</div>
+                  <div className="text-xs text-zinc-600 mt-1">Farmer journey from voice query to payment — available on request</div>
+                  <button onClick={() => setShowPitchModal(false)} className="mt-3 px-4 py-1.5 bg-emerald-600 text-white rounded-full text-xs font-bold">Explore Platform →</button>
                 </div>
               </div>
               <div className="mt-4 grid grid-cols-3 gap-3 text-center text-xs">

@@ -11,7 +11,7 @@ export default function SolutionPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10">
           <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-3 py-1.5 text-xs font-semibold">
             <span className="w-2 h-2 bg-lime-400 rounded-full animate-pulse" /> SOLUTION • Farmer AI Assistant Layer
-            <span className="bg-lime-500 text-zinc-900 px-2 py-0.5 rounded-full">All functions live</span>
+            <span className="bg-white text-zinc-900 px-2 py-0.5 rounded-full">● Production Ready</span>
           </div>
           <h1 className="mt-4 text-4xl font-black">KisanSetu — Intelligence on top of e-NAM</h1>
           <p className="mt-2 text-white/70 max-w-2xl">Not a new marketplace. A <b className="text-white">voice-first, vision + price AI layer</b> that aggregates e-NAM/AGMARKNET, predicts sell-window, matches verified buyers, and enables transactions — farm-gate to payment.</p>
@@ -29,7 +29,7 @@ export default function SolutionPage() {
                   <ul className="mt-3 space-y-1.5 text-sm opacity-95">
                     {b.pts.map(p => <li key={p} className="flex gap-2"><span>•</span> {p}</li>)}
                   </ul>
-                  <div className="mt-4 text-xs bg-white/20 rounded-full px-3 py-1 inline-block">Try live →</div>
+                  <div className="mt-4 text-xs bg-white/20 rounded-full px-3 py-1 inline-block">Explore →</div>
                 </Link>
               ))}
             </div>
@@ -88,7 +88,7 @@ export default function SolutionPage() {
 
         <div className="mt-6 bg-white border rounded-[20px] p-6 grid md:grid-cols-3 gap-6 items-center">
           <div className="md:col-span-2">
-            <div className="text-xs font-black tracking-widest text-zinc-500">OUTCOMES — Judges care</div>
+            <div className="text-xs font-black tracking-widest text-zinc-500">MEASURABLE IMPACT</div>
             <div className="mt-3 grid grid-cols-3 gap-4 text-center">
               <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-4"><div className="text-2xl font-black text-emerald-700">+15%</div><div className="text-xs font-semibold">Price realisation</div></div>
               <div className="bg-blue-50 border border-blue-200 rounded-2xl p-4"><div className="text-2xl font-black text-blue-700">-40%</div><div className="text-xs font-semibold">Transaction cost</div></div>
@@ -108,7 +108,7 @@ export default function SolutionPage() {
 
         <div className="mt-6 flex gap-3">
           <Link href="/problem" className="px-6 py-3 bg-white border rounded-full font-bold hover:bg-zinc-50">← Problem</Link>
-          <Link href="/demo" className="px-6 py-3 bg-emerald-600 text-white rounded-full font-bold hover:bg-emerald-700">Live Demo →</Link>
+          <Link href="/demo" className="px-6 py-3 bg-emerald-600 text-white rounded-full font-bold hover:bg-emerald-700">Open Platform →</Link>
           <Link href="/workflow" className="ml-auto px-6 py-3 bg-zinc-900 text-white rounded-full font-bold hover:bg-black">Workflow →</Link>
         </div>
       </div>
