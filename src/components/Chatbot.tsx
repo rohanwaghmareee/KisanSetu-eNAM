@@ -2,6 +2,7 @@
 import { useState, useEffect, useRef } from "react"
 import { askGemini } from "@/lib/gemini"
 import { saveChatMessage } from "@/lib/supabase"
+import { saveFirebaseMessage } from "@/lib/firebase"
 
 type Msg = { role: "user" | "assistant"; content: string }
 
@@ -30,11 +31,11 @@ export function Chatbot() {
     setInput("")
     const next: Msg[] = [...msgs, { role: "user", content: q }]
     setMsgs(next); setLoading(true)
-    saveChatMessage("user", q)
+    saveChatMessage("user", q); saveFirebaseMessage("user", q)
     const reply = await askGemini(q, next.map(m => ({ role: m.role, content: m.content })))
     const withReply: Msg[] = [...next, { role: "assistant", content: reply }]
     setMsgs(withReply); setLoading(false)
-    saveChatMessage("assistant", reply, { model: "gemini-1.5-flash" })
+    saveChatMessage("assistant", reply, { model: "gemini-1.5-flash" }); saveFirebaseMessage("assistant", reply, { model: "gemini-1.5-flash" })
     // speak reply short
     if ("speechSynthesis" in window && reply.length < 300) {
       const u = new SpeechSynthesisUtterance(reply.replace(/[*#]/g, "").slice(0, 180))
@@ -69,7 +70,7 @@ export function Chatbot() {
             <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">🤖</div>
             <div className="flex-1">
               <div className="font-black text-sm leading-none">KisanSetu AI</div>
-              <div className="text-[11px] opacity-90">Powered by Gemini • Supabase • Voice ready</div>
+              <div className="text-[11px] opacity-90">Powered by Gemini • Firebase • Supabase • Voice</div>
             </div>
             <span className="text-[10px] bg-white text-emerald-700 px-2 py-1 rounded-full font-bold">● LIVE</span>
           </div>
@@ -95,7 +96,7 @@ export function Chatbot() {
             <input value={input} onChange={e => setInput(e.target.value)} onKeyDown={e => e.key === "Enter" && send()} placeholder="Type in Hindi / Marathi / English..." className="flex-1 border rounded-full px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500" />
             <button onClick={() => send()} disabled={!input.trim() || loading} className="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center disabled:opacity-40 hover:bg-emerald-700">➤</button>
           </div>
-          <div className="px-3 pb-2 text-[10px] text-zinc-500 text-center">Gemini 1.5 Flash • Supabase storage • Works on GitHub Pages</div>
+          <div className="px-3 pb-2 text-[10px] text-zinc-500 text-center">Gemini 1.5 Flash • Firebase + Supabase • GitHub Pages</div>
         </div>
       )}
     </>

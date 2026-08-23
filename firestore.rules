@@ -1,0 +1,12 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /chat_messages/{doc} {
+      allow read, write: if true; // demo open — lock down for prod: allow write if request.auth != null
+    }
+    match /lots/{doc} { allow read, write: if true; }
+    match /offers/{doc} { allow read, write: if true; }
+    match /price_alerts/{doc} { allow read, write: if true; }
+    match /grievances/{doc} { allow read, write: if true; }
+  }
+}
