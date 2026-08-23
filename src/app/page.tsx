@@ -228,21 +228,21 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-[#FFFCF5] text-zinc-900">
-      {/* NAV */}
+      {/* NAV — now separate pages */}
       <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-zinc-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
-          <div className="flex items-center gap-3">
+          <Link href="/" className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-600 to-lime-500 flex items-center justify-center text-white font-bold text-lg">क</div>
             <div>
               <div className="font-extrabold leading-none text-[18px]">KisanSetu <span className="text-emerald-700">| किसान सेतु</span></div>
               <div className="text-[11px] tracking-widest text-zinc-500 font-medium">e-NAM Intelligence Layer • SIH 2026 • {lots.length} lots • {offers.length} offers</div>
             </div>
-          </div>
-          <div className="hidden md:flex items-center gap-6 text-sm font-medium">
-            <a href="#problem" className="hover:text-emerald-700">Problem</a>
-            <a href="#solution" className="hover:text-emerald-700">Solution</a>
-            <a href="#demo" className="hover:text-emerald-700">Live Demo</a>
-            <a href="#workflow" className="hover:text-emerald-700">Workflow</a>
+          </Link>
+          <div className="hidden md:flex items-center gap-1 text-sm font-medium">
+            <Link href="/problem" className="px-4 py-2 rounded-full hover:bg-zinc-100">Problem</Link>
+            <Link href="/solution" className="px-4 py-2 rounded-full hover:bg-zinc-100">Solution</Link>
+            <Link href="/demo" className="px-4 py-2 rounded-full bg-zinc-900 text-white">Live Demo</Link>
+            <Link href="/workflow" className="px-4 py-2 rounded-full hover:bg-zinc-100">Workflow</Link>
           </div>
           <div className="flex items-center gap-2">
             <div className="hidden sm:flex bg-zinc-100 rounded-full p-1 text-xs font-semibold">
@@ -250,8 +250,14 @@ export default function HomePage() {
                 <button key={l} onClick={() => { setLang(l); speak(l === "hi" ? "Hindi chuna" : l === "mr" ? "Marathi nivadle" : "English selected") }} className={`px-3 py-1.5 rounded-full transition ${lang === l ? "bg-zinc-900 text-white" : "text-zinc-600"}`}>{l.toUpperCase()}</button>
               ))}
             </div>
-            <button onClick={() => document.getElementById("demo")?.scrollIntoView({ behavior: "smooth" })} className="hidden sm:inline-flex px-5 py-2.5 bg-emerald-700 text-white rounded-full font-semibold text-sm hover:bg-emerald-800">Start Selling</button>
+            <Link href="/demo" className="hidden sm:inline-flex px-5 py-2.5 bg-emerald-700 text-white rounded-full font-semibold text-sm hover:bg-emerald-800">Start Selling</Link>
           </div>
+        </div>
+        <div className="md:hidden flex justify-around border-t bg-white text-xs font-bold py-2">
+          <Link href="/problem" className="text-zinc-600">Problem</Link>
+          <Link href="/solution" className="text-zinc-600">Solution</Link>
+          <Link href="/demo" className="text-emerald-700">Live Demo</Link>
+          <Link href="/workflow" className="text-zinc-600">Workflow</Link>
         </div>
       </nav>
 
