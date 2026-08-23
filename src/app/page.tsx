@@ -442,6 +442,9 @@ export default function HomePage() {
             </div>
           ))}
         </div>
+        <div className="mt-6 flex justify-center">
+          <Link href="/problem" className="px-6 py-2.5 bg-zinc-900 text-white rounded-full font-bold hover:bg-black">View Full Problem Page →</Link>
+        </div>
       </section>
 
       {/* SOLUTION ARCH */}
@@ -491,6 +494,9 @@ export default function HomePage() {
             <span className="bg-white text-zinc-900 rounded-full px-3 py-1 font-semibold">Mandi arrivals</span>
             <span className="bg-white text-zinc-900 rounded-full px-3 py-1 font-semibold">Transport partners</span>
             <span className="ml-auto text-white/70">Expected outcome: <b className="text-white">+12-18% price realisation, -40% info asymmetry</b></span>
+          </div>
+          <div className="mt-6 flex justify-center">
+            <Link href="/solution" className="px-6 py-2.5 bg-white text-zinc-900 rounded-full font-bold hover:bg-zinc-100">View Full Solution Page →</Link>
           </div>
         </div>
       </section>
