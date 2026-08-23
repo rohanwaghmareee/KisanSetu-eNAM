@@ -1,0 +1,13 @@
+node_modules
+.next
+out
+dist
+.env
+.env.local
+dev.log
+.DS_Store
+backup_original_portal
+farmers-market-linkage
+portfolio
+scamshield
+prisma/dev.db
