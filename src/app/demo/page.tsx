@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from "react"
 import { Navbar } from "@/components/Navbar"
 import { useToast } from "@/hooks/use-toast"
 import Link from "next/link"
+import { fetchLiveMandi, toMandiCard } from "@/lib/agmarknet"
 
 const mandiDataByCrop: Record<string, any[]> = {
   Soybean: [
@@ -74,7 +75,22 @@ export default function DemoPage() {
   const [transcript, setTranscript] = useState("")
   const recognitionRef = useRef<any>(null)
 
-  const mandiData = mandiDataByCrop[activeCrop] || mandiDataByCrop.Soybean
+  const [liveMandi, setLiveMandi] = useState<any[] | null>(null)
+  const [liveSource, setLiveSource] = useState<"live" | "mock" | "loading">("loading")
+  const [liveError, setLiveError] = useState("")
+
+  useEffect(() => {
+    setLiveSource("loading")
+    fetchLiveMandi(activeCrop, 5).then(r => {
+      if (r.source === "live" && r.data.length) {
+        setLiveMandi(r.data.map(toMandiCard)); setLiveSource("live")
+      } else {
+        setLiveMandi(null); setLiveSource("mock"); setLiveError(r.error || "")
+      }
+    })
+  }, [activeCrop])
+
+  const mandiData = liveMandi || mandiDataByCrop[activeCrop] || mandiDataByCrop.Soybean
   const buyerData = buyerDataByCrop[activeCrop] || buyerDataByCrop.Soybean
   const priceHistory = priceHistoryByCrop[activeCrop] || priceHistoryByCrop.Soybean
 
@@ -140,9 +156,10 @@ export default function DemoPage() {
         <div className="mt-6 grid lg:grid-cols-12 gap-4">
           <div className="lg:col-span-8 bg-white border rounded-[20px] overflow-hidden shadow-sm">
             <div className="px-5 py-4 flex items-center justify-between border-b">
-              <div className="font-black flex items-center gap-2">📊 Mandi Price Intelligence — {activeCrop} <span className="text-xs bg-lime-100 text-lime-800 px-2 py-1 rounded-full">Live from e-NAM</span></div>
-              <div className="text-xs font-semibold text-zinc-500">{mandiData.length} mandis • 2 min ago</div>
+              <div className="font-black flex items-center gap-2">📊 Mandi Price Intelligence — {activeCrop} <span className={`text-xs px-2 py-1 rounded-full font-bold ${liveSource === "live" ? "bg-emerald-600 text-white" : liveSource === "loading" ? "bg-amber-100 text-amber-800" : "bg-zinc-100 text-zinc-600"}`}>{liveSource === "live" ? "● Live AGMARKNET" : liveSource === "loading" ? "● Fetching live..." : "● Mock (live fallback)"}</span></div>
+              <div className="text-xs font-semibold text-zinc-500">{mandiData.length} mandis • {liveSource === "live" ? "Just now" : "2 min ago"}</div>
             </div>
+            {liveSource === "mock" && liveError && <div className="px-5 py-2 bg-amber-50 border-b text-xs text-amber-800">Live AGMARKNET failed ({liveError}) — showing cached mock. Add <code>NEXT_PUBLIC_DATA_GOV_API_KEY</code> for real feed.</div>}
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead className="bg-zinc-50 text-xs font-black text-zinc-500"><tr><th className="text-left px-4 py-2.5">Mandi</th><th className="text-left px-4 py-2.5">Price/q</th><th className="text-left px-4 py-2.5">Trend</th><th className="text-left px-4 py-2.5">Distance</th><th className="text-left px-4 py-2.5">Action</th></tr></thead>

@@ -10,6 +10,8 @@ export function Navbar() {
     { href: "/solution", label: "Solution" },
     { href: "/demo", label: "Live Demo" },
     { href: "/workflow", label: "Workflow" },
+    { href: "/admin", label: "Admin" },
+    { href: "/fpo", label: "FPO" },
   ]
   return (
     <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-zinc-200">
