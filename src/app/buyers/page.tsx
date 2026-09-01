@@ -1,6 +1,5 @@
 "use client"
 import { useState } from "react"
-import { Navbar } from "@/components/Navbar"
 import { useToast } from "@/hooks/use-toast"
 
 const buyersByCrop: any = {
@@ -31,7 +30,6 @@ export default function BuyersPage() {
 
   return (
     <div className="min-h-screen bg-[#FFFCF5]">
-      <Navbar />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
         <div className="flex flex-wrap items-end gap-3">
           <h1 className="text-3xl font-black">Verified Buyers</h1>

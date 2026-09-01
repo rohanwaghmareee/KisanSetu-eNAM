@@ -4,6 +4,7 @@ import "./globals.css"
 import { Providers } from "@/components/providers"
 import { Toaster } from "@/components/ui/toaster"
 import { Chatbot } from "@/components/Chatbot"
+import { Sidebar } from "@/components/Sidebar"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -21,7 +22,12 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
         <Providers>
-          {children}
+          <div className="flex min-h-screen">
+            <Sidebar />
+            <main className="flex-1 min-w-0 bg-[#FFFCF5]">
+              {children}
+            </main>
+          </div>
           <Toaster />
           <Chatbot />
         </Providers>

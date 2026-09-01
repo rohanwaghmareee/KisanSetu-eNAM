@@ -1,6 +1,5 @@
 "use client"
 import { useState } from "react"
-import { Navbar } from "@/components/Navbar"
 import { useToast } from "@/hooks/use-toast"
 
 export default function WarehousePage(){
@@ -14,7 +13,6 @@ export default function WarehousePage(){
   const book=(w:any)=>{ setBooked(p=>[{id:Date.now().toString(), w:w.name, rate:w.rate},...p]); toast({title:"Warehouse booked!", description:`${w.name} — ${w.rate} • e-NWR generated`})}
   return (
     <div className="min-h-screen bg-[#FFFCF5]">
-      <Navbar />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
         <h1 className="text-3xl font-black">Warehouse / e-NWR</h1>
         <p className="text-sm text-zinc-600">Store produce, generate e-NWR (Electronic Negotiable Warehouse Receipt), pledge for loan via e-NAM.</p>

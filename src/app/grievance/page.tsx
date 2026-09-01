@@ -1,6 +1,5 @@
 "use client"
 import { useState, useEffect } from "react"
-import { Navbar } from "@/components/Navbar"
 import { useToast } from "@/hooks/use-toast"
 
 export default function GrievancePage(){
@@ -18,7 +17,6 @@ export default function GrievancePage(){
   }
   return (
     <div className="min-h-screen bg-[#FFFCF5]">
-      <Navbar />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
         <h1 className="text-3xl font-black">Grievance</h1>
         <p className="text-sm text-zinc-600">1-click dispute to APMC • Payment, quality, weighment • Track status • Firebase <code>grievances</code> collection.</p>

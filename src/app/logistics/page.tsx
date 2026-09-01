@@ -1,6 +1,5 @@
 "use client"
 import { useState } from "react"
-import { Navbar } from "@/components/Navbar"
 import { useToast } from "@/hooks/use-toast"
 
 export default function LogisticsPage(){
@@ -9,7 +8,6 @@ export default function LogisticsPage(){
   const book=(q:string)=>{ const b={id:Date.now().toString(), q, time:new Date().toLocaleString()}; setBookings(p=>[b,...p]); toast({title:"Booked!", description:q + " — driver will call"})}
   return (
     <div className="min-h-screen bg-[#FFFCF5]">
-      <Navbar />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
         <h1 className="text-3xl font-black">Logistics</h1>
         <p className="text-sm text-zinc-600">Truck booking, shared FPO transport, cold-chain — compare & book in one tap.</p>

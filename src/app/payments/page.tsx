@@ -1,6 +1,5 @@
 "use client"
 import { useState, useEffect } from "react"
-import { Navbar } from "@/components/Navbar"
 import { useToast } from "@/hooks/use-toast"
 
 export default function PaymentsPage(){
@@ -10,7 +9,6 @@ export default function PaymentsPage(){
 
   return (
     <div className="min-h-screen bg-[#FFFCF5]">
-      <Navbar />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
         <h1 className="text-3xl font-black">Payments</h1>
         <p className="text-sm text-zinc-600">UPI T+1 tracking, settlement status, fraud anomaly detection — Firebase <code>lots</code> collection.</p>

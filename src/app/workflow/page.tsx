@@ -1,6 +1,5 @@
 "use client"
 import { useState } from "react"
-import { Navbar } from "@/components/Navbar"
 import { useToast } from "@/hooks/use-toast"
 import Link from "next/link"
 
@@ -37,7 +36,6 @@ export default function WorkflowPage() {
 
   return (
     <div className="min-h-screen bg-[#FFFCF5]">
-      <Navbar />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10">
         <div className="inline-flex items-center gap-2 bg-white border border-amber-200 rounded-full px-3 py-1.5 text-xs font-semibold">
           <span className="w-2 h-2 bg-emerald-600 rounded-full animate-pulse" /> WORKFLOW • 8 steps vs e-NAM 12 steps

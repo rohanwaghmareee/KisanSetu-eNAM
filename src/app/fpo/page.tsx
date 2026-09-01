@@ -1,6 +1,5 @@
 "use client"
 import { useState, useEffect } from "react"
-import { Navbar } from "@/components/Navbar"
 import { useToast } from "@/hooks/use-toast"
 import Link from "next/link"
 
@@ -19,7 +18,6 @@ export default function FpoPage() {
 
   return (
     <div className="min-h-screen bg-[#FFFCF5]">
-      <Navbar />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
         <div className="flex flex-wrap items-center gap-3">
           <h1 className="text-3xl font-black">FPO Dashboard</h1>
