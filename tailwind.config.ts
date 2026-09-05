@@ -38,7 +38,7 @@ module.exports = {
           foreground: "hsl(var(--muted-foreground))",
         },
         accent: {
-          DEFAULT: "hsl(var(--accient))",
+          DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
         },
         popover: {
@@ -49,6 +49,20 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        // Custom day/night palette
+        daybreak: "hsl(25 100% 97%)",
+        lavender: "hsl(280 70% 95%)",
+        rose: "hsl(335 80% 95%)",
+        gold: "hsl(45 100% 70%)",
+        crystal: "hsl(340 100% 75%)",
+        cosmic: "hsl(260 50% 12%)",
+        indigo: "hsl(270 50% 15%)",
+        cyan: "hsl(180 100% 60%)",
+        emerald: "hsl(145 60% 55%)",
+        silver: "hsl(0 0% 70%)",
+        // UI colors
+        glass: "rgba(255, 255, 255, 0.6)",
+        glassDark: "rgba(0, 0, 0, 0.4)",
       },
       borderRadius: {
         lg: "var(--radius)",
